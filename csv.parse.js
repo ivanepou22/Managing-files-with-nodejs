@@ -5,7 +5,7 @@ module.exports = {
     const rows = csv.map(_ => _.split(/,/));
     const header = rows[0];
 
-    const vals = [];
+    const values = [];
 
     for (let i = 1; i < rows.length; i++) {
       let obj = {};
@@ -17,9 +17,9 @@ module.exports = {
           obj[header[j]] = number;
         }
       }
-      vals.push(obj);
+      values.push(obj);
     }
 
-    return vals;
+    return values;
   }
 };
