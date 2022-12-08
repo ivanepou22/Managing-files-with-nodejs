@@ -1,6 +1,7 @@
-const { closeSync, openSync, readdirSync, writeSync } = require('fs');
+const { closeSync, openSync, readdirSync, writeSync, watch } = require('fs');
 const camelCase = require('camelcase');
 
+watch('./read', () => {
 
 const indexFd = openSync('./index.js', 'w');
 const files = readdirSync('./read');
@@ -13,3 +14,5 @@ files.map( f => {
 })
 
 closeSync(indexFd);
+
+});
